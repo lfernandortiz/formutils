@@ -13,6 +13,28 @@ package com.luisfernandoortiz.commons;
 public class StringUtil {
 	
 	
+	/**
+	 * El metodo <tt>getDigitsOnly </tt>retorna los digitos sin espeacios 
+	 * de una cadena, puede ser usado para extraer los digitos en numeros 
+	 * telfonicos cuando estos al ser registrados tengan espacios.
+	 * 
+	 * @param String number
+	 * @return String con solo digitos
+	 */
+	public static String getDigitsOnly(String number) {
+		StringBuffer digitsOnly = new StringBuffer();
+		char c;
+
+		for (int i = 0; i < number.length(); i++) {
+			c = number.charAt(i);
+			if (Character.isDigit(c)) {
+				digitsOnly.append(c);
+			}
+		}
+		return digitsOnly.toString(); 
+	}// fin del metodo getDigitsOnly - obtener solo digitos
+	
+	
 	
 	/**
 	 * El metodo <tt>validateEmail </tt> retorna true si la direccion de correo 
@@ -33,6 +55,6 @@ public class StringUtil {
 			return true;
 		}		
 		
-	}
+	} 
 	
 }
